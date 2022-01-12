@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style/test.css">
+    <title>測試</title>
+</head>
+
+<style>
+    .lista li.active{background: red;}
+</style>
+<body>
+    <h1 id="title"></h1>
+    <div class="content">
+        <section>
+            <ul class="lista" id="listStyle">
+                <li>curry</li>
+                <li>lebron</li>
+                <li>kobe</li>
+                <li>jorden</li>
+                <li>wade</li>
+            </ul>
+        </section>
+
+        <section>
+            <ul id="listB"></ul>
+        </section>
+
+        <a href="#" id="link">add</a>
+        
+        <div>
+            <label class="lbl" id="lbl">
+                點啊 你點啊 <input type="checkbox" name="chkbox" id="chkbox">
+            </label>
+        </div>
+
+        <section>
+            <ul id="listC"></ul>
+        </section>
+
+        <section>
+            <ul class="listd" id="listd">
+                <li>curry</li>
+                <li>lebron</li>
+                <li>kobe</li>
+                <li>jorden</li>
+                <li>wade</li>
+            </ul>
+        </section>
+    </div>
+
+
+
+    <script>
+        var lisd = document.getElementById('listd');
+
+        var lid = document.getElementsByClassName('listd')
+
+        console.log(lid)
+        
+        lisd.addEventListener('click' , function () {
+            this.addClass('active');
+        })
+
+        var lbl = document.getElementById('lbl');
+        var cbox = document.getElementById('chkbox');
+
+        var el = document.getElementById('listStyle');
+        //創造元素
+        var newli = document.createElement('li');
+        //創造文字節點
+        var textnode = document.createTextNode('hellow');
+        //選取第三個li
+        var lis=document.querySelector('#listStyle  li');
+        // 透過 newli.appendChild 將 textNode 加入至 newli
+        newli.appendChild(textnode);
+        //在第三個li前加入元素
+        el.insertBefore(newli , lis);
+        //在末端加入新創造的元素
+        el.appendChild(newli);
+        //刪除節點
+        el.removeChild(lis)
+        //加入文字
+        document.getElementById('title').textContent ='hellow world!'
+
+        var listb = document.getElementById('listB');
+        //建立容器
+        var fargment = document.createDocumentFragment();
+        //容器內容  
+        for(var i=0 ; i < 10 ; i++){
+            let li = document.createElement('li');
+            li.appendChild(document.createTextNode("mamber" + (i + 1)));
+            //加入到容器裡
+            fargment.appendChild(li);
+        }
+
+        //在父層加入容器
+        listb.appendChild(fargment);
+
+        var listb_li = document.querySelectorAll("#listB li");
+        listb_li.onclick = function () {
+            alert('haha');
+        };
+
+        //阻擋預設行為 event.preventDefault()
+        var link = document.getElementById('link');
+
+        var preven = function (e) {
+            e.preventDefault();
+        }
+
+        link.addEventListener('click' , preven , false);
+
+        var listc = document.getElementById('listC');
+
+        for(var a=0 ; a < 10 ; a++){
+            let lii = document.createElement('li')
+            lii.appendChild(document.createTextNode("haha" + (a + 1)));
+            fargment.appendChild(lii);
+        }
+        listc.appendChild(fargment);
+
+        //後來添加的物件
+        var lic =document.createElement('li');
+        var lictxt=document.createTextNode('xxx');
+        lic.appendChild(lictxt);
+        listc.appendChild(lic);
+
+        //由父層監聽事件，可以讓後來添加的物件也有click效果
+        listc.addEventListener('click', function (e) {
+            if (e.target.tagName.toLowerCase() === 'li') {
+                console.log('gagaga')
+            }
+        })
+
+        
+        for (var x=0 ; x<10 ; x++){
+            window.setTimeout(function(){
+            },x * 1000);
+        }
+    </script>
+</body>
+</html>

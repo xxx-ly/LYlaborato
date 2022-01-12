@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style/test.css">
+    <title>測試測試</title>
+</head>
+
+<script>
+    // 99乘法表
+    // for (i=1; i <10; i++){
+    //     for (v=1 ; v<10; v++){
+    //         x= i * v
+    //         console.log(x);
+    //     }
+    // }
+
+    var month = 12;
+
+    switch (Math.ceil(month / 3)) {
+        case 1:
+            console.log('春天');
+            break;
+        case 2:
+            console.log('夏天');
+            break;
+        case 3:
+            console.log('秋天');
+            break;
+        case 4:
+            console.log('冬天');
+            break;
+        default:
+            console.log('月份錯誤');
+            break;
+    }
+
+    var lottery = [];
+    var n;
+
+    // 直到陣列 lottery 選滿 6 球
+    while (lottery.length < 6) {
+        // 取一隨機 1 ~ 49 數字
+        n = Math.floor(Math.random() * 49) + 1;
+        // 如果選出來的 n 不存在，就放入陣列
+        if (lottery.indexOf(n) === -1) {
+            lottery.push(n);
+        }
+    }
+
+</script>
+
+<style>
+</style>
+<body>
+
+</body>
+</html>

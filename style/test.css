@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+
+.testBox{
+    width: 130px;
+    height: 500px;
+    background:#004889;
+    color:#fff;
+    padding: 20px 0;
+}
+
+.nameBox{
+    width: calc(100% - 20px);
+    margin: auto;
+    text-align: center;
+}
+
+.name{
+    display: inline-block;
+    max-width: 100%;
+    padding: 3px 5px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.name:hover{
+    max-width:none;
+    background: rgba(0,0,0,0.5);
+}
+
+
+.faker{
+    width: 80%;
+    height: 30px;
+    background: #000;
+}
+
+.ml100px{margin-left: 100px;}
+.mt10px{margin-top: 10px;}
+
+.listStyle{
+    list-style: none;
+    margin-left: 50px;
+}
+
+.listStyle li + li{
+    margin-top: 5px;
+}

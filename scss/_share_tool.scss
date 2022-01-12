@@ -1,0 +1,33 @@
+@keyframes sign{
+    0%{background: map-get($bg_color , purple);}
+
+    50%{
+        background:lighten( map-get($bg_color , purple), 10%);
+        color:lighten( map-get($bg_color , purple), 10%);
+    }
+
+    100%{
+        background:lighten( map-get($bg_color , purple), 15%);
+    }
+}
+
+@keyframes simpson{
+    100%{left: 105%;}
+}
+
+.listStyle{
+    li{
+        @extend %hand;
+        padding: 5px 10px;
+        background: map-get($bg_color , green);
+        text-align: center;
+        &+li{margin-top: 10px;}
+        border-radius: 5px;
+        &:active{
+            transform: translateY(2px);
+        }
+        &:hover{
+            background: map-get($bg_color , red);
+        }
+    }
+}

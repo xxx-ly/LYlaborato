@@ -9,10 +9,64 @@
 </head>
 <body>
     <div class="container">
-        <header>Leon's laborato</header>
+        <header>
+            <i class="img_logo"></i>
+            <span>Leon's laborato</span>
+        </header>
+        
         <div class="content">
+            <section class="content__room">
+                <ul class="listStyle" id="playerlist">
+                    <li>jordan</li>
+                    <li>curry</li>
+                    <li>kobe</li>
+                    <li>Iverson</li>
+                    <li>Zavin</li>
+                </ul>
 
+                <ul class="listStyle" id="place">
+                    <li>Taiwan</li>
+                    <li>USA</li>
+                    <li>Japan</li>
+                    <li>india</li>
+                    <li>franch</li>
+                </ul>
+
+                <ul class="listStyle" id="animal">
+                </ul>
+                
+            </section>
         </div>
     </div>
+
+    <script>
+        var player = document.getElementById('playerlist');
+
+        var mvp = document.createElement('li');
+        var mvpname = document.createTextNode('Leon');
+
+        mvp.appendChild(mvpname);
+        player.appendChild(mvp);
+
+        var place = document.getElementById('place');
+        var JP = document.querySelectorAll('#place li')[2];
+
+        var newplace = document.createElement('li');
+        var newplacename = document.createTextNode('canada')
+        newplace.appendChild(newplacename);
+
+        place.insertBefore(newplace,JP);
+
+        var animal = document.getElementById('animal');
+        
+        var bag = document.createDocumentFragment();
+
+        for (i=0 ; i<6 ; i++){
+            var food = document.createElement('li');
+            food.appendChild(document.createTextNode('food' + i))
+            bag.appendChild(food);
+        }
+        animal.appendChild(bag);
+    </script>
 </body>
 </html>

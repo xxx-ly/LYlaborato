@@ -23,11 +23,15 @@
         text-align: center;
         &+li{margin-top: 10px;}
         border-radius: 5px;
-        &:active{
-            transform: translateY(2px);
-        }
+        box-shadow: 2px 2px 0 darken(map-get($bg_color , green), 10%);
         &:hover{
             background: map-get($bg_color , red);
+            box-shadow: 2px 2px 0 darken(map-get($bg_color , red), 10%);
+        }
+        &:active{
+            transform: translateY(2px);
+            box-shadow: 3px 3px 1px darken(map-get($bg_color , red), 10%) inset;
         }
     }
 }
+
